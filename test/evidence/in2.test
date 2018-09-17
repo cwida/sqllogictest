@@ -74,38 +74,27 @@ SELECT 1 FROM t1 WHERE '1' NOT IN ('2')
 
 #
 # Row 2: empty RHS
-
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE 1 IN ()
 ----
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE 1.0 IN ()
 ----
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE '1' IN ()
 ----
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE NULL IN ()
 ----
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE 1 NOT IN ()
 ----
@@ -113,9 +102,7 @@ SELECT 1 FROM t1 WHERE 1 NOT IN ()
 1
 1
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE 1.0 NOT IN ()
 ----
@@ -123,9 +110,7 @@ SELECT 1 FROM t1 WHERE 1.0 NOT IN ()
 1
 1
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE '1' NOT IN ()
 ----
@@ -133,9 +118,7 @@ SELECT 1 FROM t1 WHERE '1' NOT IN ()
 1
 1
 
-skipif mysql # empty RHS
-skipif mssql # empty RHS
-skipif oracle # empty RHS
+onlyif sqlite # empty RHS
 query I nosort
 SELECT 1 FROM t1 WHERE NULL NOT IN ()
 ----
